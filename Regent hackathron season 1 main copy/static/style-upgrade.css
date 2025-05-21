@@ -1,0 +1,160 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Sticky navbar with shadow */
+header.custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: 10px 20px;
+    background-color: #243b5a !important; /* navy blue from palette */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: #f6f6f6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .level-panels {
+        flex-direction: column;
+        height: auto;
+    }
+    .level-panel {
+        flex: none;
+        height: 200px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Smooth animations for buttons and panels */
+.level-panel {
+    transition: flex 0.7s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid transparent; /* added border */
+    border-radius: 12px;
+    color: #243b5a; /* navy blue text */
+}
+
+.level-panel:hover {
+    flex: 10;
+    z-index: 10;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    border-color: #b94a43; /* red from palette */
+    color: #b94a43;
+}
+
+.level-overlay {
+    background-color: transparent; /* removed overlay on background image */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.7s ease;
+    color: #5f6f89; /* muted blue-gray from palette */
+    text-shadow: none;
+}
+
+.level-panel:hover .level-overlay {
+    background-color: rgba(0, 0, 0, 0.1); /* subtle overlay on hover */
+    color: #7a2f2a; /* darker red */
+}
+
+.level-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+.level-overlay .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(185, 74, 67, 0.3); /* red shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #b94a43; /* red */
+    border: none;
+    color: #f6f6f6; /* off-white */
+}
+
+.level-overlay .btn:hover {
+    background-color: #7a2f2a; /* darker red */
+    box-shadow: 0 6px 12px rgba(122, 47, 42, 0.5);
+    color: #f6f6f6;
+}
+
+/* Footer enhancements */
+footer.bg-dark {
+    background-color: #dcdcdc !important; /* changed to light gray */
+    color: #243b5a !important; /* navy blue */
+    padding: 3rem 0;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+footer.bg-dark h5 {
+    color: #243b5a !important; /* navy blue */
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+footer.bg-dark a {
+    color: #b94a43 !important; /* red */
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer.bg-dark a:hover {
+    color: #7a2f2a !important; /* darker red */
+    text-decoration: underline;
+}
+
+/* Social icons container */
+footer .social-icons {
+    margin-top: 1rem;
+}
+
+footer .social-icons a {
+    color: #b94a43 !important;
+    font-size: 2rem !important;
+    transition: color 0.3s ease;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+footer .social-icons a:hover {
+    color: #7a2f2a !important;
+}
+
+/* Add spacing to footer columns */
+footer .row > div {
+    margin-bottom: 1.5rem;
+}
+
+/* Additional button styles */
+.btn-primary {
+    background-color: #243b5a !important; /* navy blue from palette */
+    border-color: #243b5a !important;
+    box-shadow: 0 4px 6px rgba(36, 59, 90, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #f6f6f6;
+}
+
+.btn-primary:hover {
+    background-color: #5f6f89 !important; /* muted blue-gray */
+    border-color: #5f6f89 !important;
+    box-shadow: 0 6px 12px rgba(95, 111, 137, 0.6);
+    color: #f6f6f6;
+}
+
+.btn-secondary {
+    background-color: #f6f6f6 !important; /* off-white */
+    border-color: #f6f6f6 !important;
+    color: #243b5a !important; /* navy blue */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5f6f89 !important; /* muted blue-gray */
+    border-color: #5f6f89 !important;
+    color: #f6f6f6 !important;
+}

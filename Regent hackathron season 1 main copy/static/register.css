@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #001f4d, #002966);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5;
+    overflow: hidden;
+}
+.register-container {
+    position: relative;
+    width: 380px;
+    padding: 40px;
+    background: #0a1a40;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    z-index: 10;
+}
+.register-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffd700; /* Soft gold */
+}
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+.register-container label {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #f5f5f5;
+}
+.register-container input[type="text"],
+.register-container input[type="password"] {
+    padding: 14px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #001f4d;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+.register-container input[type="text"]:focus,
+.register-container input[type="password"]:focus {
+    box-shadow: 0 0 20px #ffd700;
+}
+.register-container button {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #ffd700;
+    color: #001f4d;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 15px;
+}
+.register-container button:hover {
+    background: #ffec8b;
+}
+.register-container .login-btn {
+    background: transparent;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+}
+.register-container .login-btn:hover {
+    background: #ffd700;
+    color: #001f4d;
+}

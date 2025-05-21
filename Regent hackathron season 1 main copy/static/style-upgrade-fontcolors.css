@@ -1,0 +1,235 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Sticky navbar with shadow */
+header.custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: 10px 20px;
+    background-color: #243b5a !important; /* navy blue from palette */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: #f6f6f6;
+}
+
+/* Navbar links with updated font colors */
+.navbar-nav .nav-link {
+    color: #e0e6f0 !important; /* lighter blue */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6b6b !important; /* coral red */
+}
+
+/* Profile section with updated font color */
+.profile-section {
+    box-shadow: 0 0 8px 2px rgba(185, 74, 67, 0.6);
+    border-radius: 12px;
+    padding: 6px 12px;
+    color: #d1d9e6; /* light gray-blue */
+}
+
+/* Logout button with gradient */
+.btn-secondary.logout-button {
+    background: linear-gradient(45deg, #b94a43, #7a2f2a);
+    border: none;
+    color: #f6f6f6;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary.logout-button:hover {
+    background: linear-gradient(45deg, #7a2f2a, #b94a43);
+}
+
+/* Level panels with updated font colors */
+.level-panels {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.level-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    min-width: 280px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: #e0e6f0; /* lighter blue */
+    text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+.level-panel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 36px rgba(185, 74, 67, 0.7);
+    z-index: 10;
+}
+
+/* Overlay inside level panel */
+.level-overlay {
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+    color: #d1d9e6; /* light gray-blue */
+}
+
+.level-overlay h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: inherit;
+}
+
+/* Buttons with unique gradient and shadow */
+.level-overlay .btn-primary {
+    background: linear-gradient(45deg, #b94a43, #7a2f2a);
+    border: none;
+    color: #f6f6f6;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 12px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(185, 74, 67, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.level-overlay .btn-primary:hover {
+    background: linear-gradient(45deg, #7a2f2a, #b94a43);
+    box-shadow: 0 8px 24px rgba(122, 47, 42, 0.8);
+}
+
+/* About section with semi-transparent background */
+.about-section {
+    background: rgba(36, 59, 90, 0.7);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    color: #d1d9e6; /* light gray-blue */
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 900px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.about-section h2 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Footer with dark transparent background and glow */
+footer.bg-dark {
+    background: rgba(36, 59, 90, 0.85);
+    color: #d1d9e6;
+    padding: 3rem 0;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+}
+
+footer.bg-dark h5 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #d1d9e6;
+}
+
+footer.bg-dark a {
+    color: #b94a43;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+footer.bg-dark a:hover {
+    color: #7a2f2a;
+    text-decoration: underline;
+}
+
+/* Social icons container */
+footer .social-icons {
+    margin-top: 1rem;
+}
+
+/* Add spacing to footer columns */
+footer .row > div {
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons with gradient and shadow */
+.btn-primary {
+    background: linear-gradient(45deg, #243b5a, #b94a43);
+    border: none;
+    color: #f6f6f6;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(36, 59, 90, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #b94a43, #243b5a);
+    box-shadow: 0 8px 24px rgba(185, 74, 67, 0.8);
+}
+
+.btn-secondary {
+    background: #f6f6f6;
+    border: none;
+    color: #243b5a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    border-radius: 14px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #5f6f89;
+    color: #f6f6f6;
+}
+
+/* Form elements with glass effect */
+form label {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+form select.form-select {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid #f6f6f6;
+    color: #f6f6f6;
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form select.form-select:focus {
+    border-color: #b94a43;
+    box-shadow: 0 0 8px rgba(185, 74, 67, 0.8);
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .level-panels {
+        flex-direction: column;
+        height: auto;
+    }
+    .level-panel {
+        min-width: 100%;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Regent BTEC Grade Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-upgrade.css') }}" />
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6Q+ua6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-light text-muted" style="background: url('{{ url_for('static', filename='image/background image 1.jpg') }}') no-repeat center center fixed; background-size: cover;">
+    <header class="custom-navbar navbar navbar-expand-lg">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="profile-section d-flex align-items-center">
+                <img src="{{ url_for('static', filename='image/profile.jpg') }}" alt="Profile" class="profile-image border border-2 border-muted" />
+                <span class="welcome-text text-primary">Welcome, 123456!</span>
+                <button class="btn btn-secondary btn-sm logout-button"><i class="fas fa-sign-out-alt me-1"></i> Logout</button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ url_for('register') }}"><i class="fas fa-user-plus me-1"></i> Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt me-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ url_for('forgot_password') }}"><i class="fas fa-key me-1"></i> Forget Password</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container py-5">
+        <div class="text-center mb-4">
+            <img src="{{ url_for('static', filename='image/logo.png') }}" alt="Logo" height="120" class="img-fluid" />
+        </div>
+        <h1 class="mb-4 text-center text-primary fw-bold">Regent BTEC Grade Calculator</h1>
+        <p class="text-center mb-5 text-muted fs-5">Select a course to calculate or predict final grades</p>
+        <div class="level-panels d-flex gap-3 flex-wrap justify-content-center">
+            {% for course_id, course in courses.items() %}
+            <div class="level-panel" style="background-image: url('{{ url_for('static', filename='image/' + (
+                'level 2 business.jpg' if course_id == 'btec_l2_business' else
+                'level 2 it.jpg' if course_id == 'btec_l2_it' else
+                'level 3 business.jpg' if course_id == 'btec_l3_business' else
+                'level 3 it.jpg' if course_id == 'btec_l3_it' else
+                'background image 1.jpg'
+            )) }}');">
+                <div class="level-overlay d-flex flex-column justify-content-center align-items-center h-100 p-3">
+                    <h2 class="fw-bold"><i class="fas fa-graduation-cap me-2"></i>{{ course.name }}</h2>
+                    <a href="{{ url_for('grades', course_id=course_id) }}" class="btn btn-primary mt-3 fw-semibold"><i class="fas fa-arrow-right me-1"></i> Select</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutButton = document.querySelector('.logout-button');
+            const profileSection = document.querySelector('.profile-section');
+            console.log('logoutButton:', logoutButton);
+            console.log('profileSection:', profileSection);
+            if (logoutButton && profileSection) {
+                logoutButton.addEventListener('click', function() {
+                    console.log('Logout button clicked');
+                    profileSection.style.display = 'none';
+                });
+            } else {
+                console.error('Logout button or profile section not found');
+            }
+        });
+    </script>
+    <section class="about-section bg-primary text-white py-5">
+        <div class="container">
+            <h2 class="mb-4">Why study at Regent Middle East</h2>
+            <div class="row text-center">
+                <div class="col-md-2">
+                    <h5><i class="fas fa-tools me-2"></i>Skill-Based</h5>
+                    <p>Education</p>
+                </div>
+                <div class="col-md-2">
+                    <h5><i class="fas fa-arrow-right me-2"></i>Seamless</h5>
+                    <p>Progression to UK</p>
+                </div>
+                <div class="col-md-2">
+                    <h5><i class="fas fa-briefcase me-2"></i>Placement</h5>
+                    <p>Support And Internship</p>
+                </div>
+                <div class="col-md-3">
+                    <h5><i class="fas fa-users me-2"></i>Vibrant</h5>
+                    <p>International Community</p>
+                </div>
+                <div class="col-md-3">
+                    <h5><i class="fas fa-building me-2"></i>State-Of-The-Art</h5>
+                    <p>Campus Amenities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row text-center text-primary">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Regent Middle East, Dubai Knowledge Park</p>
+                    <p>Phone: +971 4 123 4567</p>
+                    <p>Email: info@regenteducation.ae</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-danger"><i class="fas fa-home me-2"></i>Home</a></li>
+                        <li><a href="#" class="text-danger"><i class="fas fa-book me-2"></i>Courses</a></li>
+                        <li><a href="#" class="text-danger"><i class="fas fa-user-graduate me-2"></i>Admissions</a></li>
+                        <li><a href="#" class="text-danger"><i class="fas fa-envelope me-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/" class="text-danger me-3" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="https://instagram.com/" class="text-danger me-3" target="_blank" rel="noopener"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://linkedin.com/" class="text-danger me-3" target="_blank" rel="noopener"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3 text-primary">
+                &copy; tanvir ahmed 2025. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

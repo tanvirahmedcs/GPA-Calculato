@@ -1,0 +1,226 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Base body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f4f8;
+    color: #2c3e50;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sticky navbar with shadow */
+header.custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: 10px 20px;
+    background-color: #34495e !important; /* dark blue-gray */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: #ecf0f1;
+}
+
+/* Navbar links with improved font weight and color */
+.navbar-nav .nav-link {
+    color: #ecf0f1 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e74c3c !important; /* bright red */
+}
+
+/* Profile section */
+.profile-section {
+    font-weight: 500;
+    color: #ecf0f1;
+}
+
+/* Logout button with updated colors and font weight */
+.btn-secondary.logout-button {
+    background-color: #e74c3c !important;
+    border: none;
+    color: #ecf0f1 !important;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary.logout-button:hover {
+    background-color: #c0392b !important;
+}
+
+/* Level panels with updated colors and font weights */
+.level-panels {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.level-panel {
+    background-color: #ecf0f1;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
+    min-width: 280px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.level-panel:hover {
+    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.4);
+}
+
+/* Overlay inside level panel */
+.level-overlay {
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.level-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* Buttons with updated colors and font weights */
+.level-overlay .btn-primary {
+    background-color: #e74c3c;
+    border: none;
+    color: #ecf0f1;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.level-overlay .btn-primary:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 18px rgba(192, 57, 43, 0.7);
+}
+
+/* About section with updated colors */
+.about-section {
+    background-color: #e74c3c;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    color: #ecf0f1;
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 900px;
+    box-shadow: 0 8px 24px rgba(192, 57, 43, 0.4);
+}
+
+.about-section h2 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Footer with updated colors */
+footer.bg-dark {
+    background-color: #34495e !important;
+    color: #ecf0f1 !important;
+    padding: 3rem 0;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+footer.bg-dark h5 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ecf0f1 !important;
+}
+
+footer.bg-dark a {
+    color: #e74c3c !important;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+footer.bg-dark a:hover {
+    color: #c0392b !important;
+    text-decoration: underline;
+}
+
+/* Buttons with updated colors and font weights */
+.btn-primary {
+    background-color: #e74c3c !important;
+    border: none !important;
+    color: #ecf0f1 !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    padding: 14px 28px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 18px rgba(231, 76, 60, 0.6) !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background-color: #c0392b !important;
+    box-shadow: 0 8px 24px rgba(192, 57, 43, 0.8) !important;
+}
+
+.btn-secondary {
+    background-color: #ecf0f1 !important;
+    border: none !important;
+    color: #2c3e50 !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    padding: 14px 28px !important;
+    border-radius: 14px !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.btn-secondary:hover {
+    background-color: #95a5a6 !important;
+    color: #ecf0f1 !important;
+}
+
+/* Form elements with updated colors and font weights */
+form label {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+form select.form-select {
+    background-color: #ecf0f1;
+    border: 1.5px solid #2c3e50;
+    color: #2c3e50;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form select.form-select:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.8);
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .level-panels {
+        flex-direction: column;
+        height: auto;
+    }
+    .level-panel {
+        min-width: 100%;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+}

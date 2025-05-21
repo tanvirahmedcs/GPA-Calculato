@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register - Regent BTEC Grade Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='roboto.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}" />
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6Q+ua6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="register-container">
+        <h1>Create Account</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div>
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" role="alert" style="color:#ffd700; background: rgba(10, 26, 64, 0.6); border-radius: 5px; padding: 10px; margin-bottom: 15px;">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('register') }}">
+            <label for="username">Student ID</label>
+            <input type="text" id="username" name="username" required autofocus />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" required />
+            <button type="submit">Register</button>
+            <button type="button" class="login-btn" onclick="window.location.href='{{ url_for('login') }}'">Back to Login</button>
+        </form>
+    </div>
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row text-center text-primary">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Regent Middle East, Dubai Knowledge Park</p>
+                    <p>Phone: +971 4 123 4567</p>
+                    <p>Email: info@regenteducation.ae</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-danger">Home</a></li>
+                        <li><a href="#" class="text-danger">Courses</a></li>
+                        <li><a href="#" class="text-danger">Admissions</a></li>
+                        <li><a href="#" class="text-danger">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/" class="text-danger me-3" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="https://instagram.com/" class="text-danger me-3" target="_blank" rel="noopener"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://linkedin.com/" class="text-danger me-3" target="_blank" rel="noopener"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3 text-primary">
+                &copy; tanvir ahmed 2025. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

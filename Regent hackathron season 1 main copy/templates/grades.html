@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enter Grades - {{ course.name }}</title>
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6Q+ua6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q6Q1+6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-upgrade.css') }}" />
+</head>
+<body style="background: var(--color-light); color: var(--color-blue-muted); background: url('{{ url_for('static', filename='image/background image 1.jpg') }}') no-repeat center center fixed; background-size: cover;">
+    <div class="container py-5">
+        <h1 class="mb-4 text-center text-primary fw-bold" style="text-shadow: 2px 2px 8px #fff;">Enter Grades for {{ course.name }}</h1>
+        <form method="POST" action="{{ url_for('grades', course_id=request.view_args['course_id']) }}">
+            <div class="mb-3">
+                {% for unit, glh in course.units.items() %}
+                <label for="{{ unit }}" class="form-label fw-semibold text-primary">{{ unit }} ({{ glh }} GLH)</label>
+                <select class="form-select mb-3" id="{{ unit }}" name="{{ unit }}" required style="background: rgba(255,255,255,0.85); color: var(--color-blue-dark); border: 1.5px solid var(--color-blue-dark);">
+                    <option value="U">Unclassified (U)</option>
+                    <option value="P">Pass (P)</option>
+                    <option value="M">Merit (M)</option>
+                    <option value="D">Distinction (D)</option>
+                </select>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary fw-semibold" style="background-color: var(--color-red-muted); border-color: var(--color-red-dark); color: var(--color-light);"><i class="fas fa-calculator me-1"></i> Calculate Final Grade</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary ms-2 fw-semibold" style="background-color: var(--color-blue-muted); color: var(--color-light); border-color: var(--color-blue-dark);"><i class="fas fa-arrow-left me-1"></i> Back</a>
+        </form>
+    </div>
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row text-center text-primary">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Regent Middle East, Dubai Knowledge Park</p>
+                    <p>Phone: +971 4 123 4567</p>
+                    <p>Email: info@regenteducation.ae</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark"><span class="fa fa-home me-2 text-dark"></span>Home</a></li>
+                        <li><a href="#" class="text-dark"><span class="fa fa-book me-2 text-dark"></span>Courses</a></li>
+                        <li><a href="#" class="text-dark"><span class="fa fa-user-graduate me-2 text-dark"></span>Admissions</a></li>
+                        <li><a href="#" class="text-dark"><span class="fa fa-envelope me-2 text-dark"></span>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons d-flex flex-column align-items-center gap-2">
+                        <a href="https://facebook.com/" class="text-dark d-flex align-items-center gap-2" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook fa-lg text-dark"></i> Facebook
+                        </a>
+                        <a href="https://instagram.com/" class="text-dark d-flex align-items-center gap-2" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram fa-lg text-dark"></i> Instagram
+                        </a>
+                        <a href="https://linkedin.com/" class="text-dark d-flex align-items-center gap-2" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin fa-lg text-dark"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3 text-primary">
+                &copy; tanvir ahmed 2025. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
